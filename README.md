@@ -17,13 +17,6 @@ npm run dev
 
 Dev server runs at `http://localhost:5173`. For production build: `npm run build`.
 
-## Deployment (Vercel)
-
-1. Push your code to a GitHub repository.
-2. Import the repository in [Vercel](https://vercel.com).
-3. Vercel will automatically detect the Vite settings and deploy.
-4. Client-side routing is handled by `vercel.json`.
-
 ## Pages
 
 | Route | Description |
