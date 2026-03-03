@@ -1,0 +1,134 @@
+.listing-page {
+    padding-top: calc(var(--nav-height) + var(--space-3xl));
+    padding-bottom: var(--space-4xl);
+    min-height: 100vh;
+}
+
+.listing-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+}
+
+.listing-label {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-gold);
+    margin-bottom: var(--space-md);
+}
+
+.listing-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: var(--weight-light);
+    color: var(--color-cream);
+}
+
+/* Controls */
+.listing-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.filter-bar {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-muted);
+    background: transparent;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    border-color: var(--color-gold);
+    color: var(--color-cream);
+}
+
+.filter-btn.active {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-bg);
+}
+
+.sort-select {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-surface);
+    color: var(--color-cream);
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238A8A8A' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+}
+
+.sort-select:focus {
+    outline: none;
+    border-color: var(--color-gold);
+}
+
+/* Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+.listing-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--space-4xl) 0;
+    color: var(--color-muted);
+    font-size: var(--text-lg);
+}
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .listing-title {
+        font-size: var(--text-3xl);
+    }
+
+    .listing-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-bar {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
